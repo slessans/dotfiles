@@ -15,10 +15,13 @@ for opener in browser-exec xdg-open cmd.exe cygstart "start" open; do
 done
 
 # pb* on linux
-if echo "" | xclip > /dev/null 2>&1; then 
+if echo "" | xclip > /dev/null 2>&1; then
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
 fi
+
+# lsusb on mac
+command -v lsusb > /dev/null || alias lsusb='system_profiler SPUSBDataType'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 # alias ..="cd .."
