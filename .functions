@@ -138,6 +138,12 @@ json() {
 	fi
 }
 
+# Make JSON string from stdin as small as posisble (removing whitespace)
+# Usage: only with stdin/stdout: `echo '{"foo":42}' | minijson` or `cat config.json | minijson`
+minijson() {
+	python -c $'import json, sys\njson.dump(json.load(sys.stdin), sys.stdout, indent=None, separators=(\',\', \':\',))'
+}
+
 # Run `dig` and display the most useful info
 digga() {
 	dig +nocmd "$1" any +multiline +noall +answer
