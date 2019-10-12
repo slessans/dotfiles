@@ -6,7 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 set -x
 
-for file in $DIR/.{aliases,bash_profile,bash_prompt,bashrc,exports,functions,gitconfig}; do
+for file in $DIR/.{aliases,bash_profile,bash_prompt,bashrc,exports,functions,gitconfig,zshrc}; do
     f=$(basename $file)
     dest="$HOME/$f" 
     echo "ln -sfn $file $dest"
